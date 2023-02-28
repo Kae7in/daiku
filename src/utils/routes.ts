@@ -4,8 +4,8 @@ export const ROUTES = {
     url: "/",
   },
   PLAYGROUND: {
-    displayName: "Playground",
-    url: "/playground",
+    displayName: "Create",
+    url: "/create",
   },
   DOCS: {
     displayName: "Docs",
