@@ -16,7 +16,7 @@ export const Logo: FC<LogoProps> = ({ scrolled, ...props }) => {
   return (
     <div {...props}>
       <div
-        className={`${font.className} transition-colors duration-250 text-white bg-black cursor-pointer font-bold text-xl tracking-tight h-max px-2 py-1 w-max text-center rounded-md`}
+        className={`${font.className} transition-colors duration-250 cursor-pointer font-bold text-2xl tracking-tight h-max w-max text-center rounded-md`}
       >
         daiku
       </div>
