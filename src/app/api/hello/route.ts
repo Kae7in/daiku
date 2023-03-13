@@ -6,22 +6,14 @@ export async function GET(request: Request) {
   });
   const openai = new OpenAIApi(configuration);
 
-  try {
-    const completion = await openai.createCompletion({
-      model: "code-davinci-002",
-      prompt: "Write a JavaScript function that prints Hello World",
-      stream: false,
-    });
-    const responseText = completion.data.choices[0].text;
-    return new Response(responseText);
-  } catch (error) {
-    if (error.response) {
-      console.log(error.response.status);
-      console.log(error.response.data);
-    } else {
-      console.log(error.message);
-    }
-  }
+  const completion = await openai.createEdit({
+    model: "code-davinci-edit-001",
+    input: "",
+    instruction:
+      "Create a React component that composes a separate child component. Please write it in the style of React Hooks. Include a comment at the top of each codeblock indicating the filename with the correct extension.",
+    temperature: 0.5,
+  });
+  const responseText = completion.data.choices[0].text;
 
-  return new Response("No op");
+  return new Response(responseText);
 }
